@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
-import { Context } from '../../context/context'
+import { Context } from '../../context/Context'
 const Main = () => {
     const {onSent,recentPrompt,showResult,loading,resultData,setInput,input}=useContext(Context);
   return (
@@ -67,7 +67,9 @@ const Main = () => {
                 <input onChange={(e) =>
                     setInput(e.target.value)
                     
-                } value={input} type="text" placeholder='enter a promt here..'/>
+                } value={input} type="text" 
+                onKeyDown={(e) => e.key === "Enter" && onSent()} 
+                placeholder='enter a promt here..'/>
                 <div>
                     <img src={assets.gallery_icon} alt="" />
                     <img src={assets.mic_icon}  alt="" />
