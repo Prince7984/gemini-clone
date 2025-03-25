@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
-import { Context } from "../../context/context";
+import { Context } from "../../context/Context.jsx";
 const Sidebar = () => {
   const [extended, setExtened] = useState(false);
   const {onSent,prevPrompt=[],setRecentPrompt,newchat}= useContext(Context)
